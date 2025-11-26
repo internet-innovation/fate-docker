@@ -1,6 +1,6 @@
 = Docker images for Fate and its derivatives
 
-This repository ships a base Docker image for configuration and extension by images shipping https://github.com/internet-equity/fate[Fate] and libraries derived from Fate.
+This repository ships a base Docker image for configuration and extension by images shipping https://github.com/internet-innovation/fate[Fate] and libraries derived from Fate.
 
 This enables the Dockerfiles of Fate derivatives to _configure_ – rather than re-implement – their basic installation and implement only the _additional_ logic (_e.g._ installation of system libraries) they require.
 
@@ -10,9 +10,9 @@ For the most basic use in the Dockerfile of a library derived from Fate it's as 
 
 ```Dockerfile
 ARG APP_NAME=fate
-ARG ORG_NAME=internet-equity
+ARG ORG_NAME=internet-innovation
 
-FROM ghcr.io/internet-equity/fate-builder
+FROM ghcr.io/internet-innovation/fate-builder
 
 CMD ["fated", "--foreground"]
 ```
@@ -23,12 +23,12 @@ Of course, the above will install the Fate library into the image. An alternate 
 ARG APP_NAME=fate-custom
 ARG ORG_NAME=another-name
 
-FROM ghcr.io/internet-equity/fate-builder
+FROM ghcr.io/internet-innovation/fate-builder
 
 CMD ["fated", "--foreground"]
 ```
 
-Refer to the https://github.com/internet-equity/fate/blob/main/Dockerfile[Fate Dockerfile] for a more concrete example and to the https://github.com/internet-equity/netrics/blob/main/Dockerfile[Netrics Dockerfile] for a more sophisticated extension of this base.
+Refer to the https://github.com/internet-innovation/fate/blob/main/Dockerfile[Fate Dockerfile] for a more concrete example and to the https://github.com/internet-innovation/netrics/blob/main/Dockerfile[Netrics Dockerfile] for a more sophisticated extension of this base.
 
 == Implementation
 
